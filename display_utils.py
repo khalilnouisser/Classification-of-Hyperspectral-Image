@@ -30,3 +30,14 @@ def display_data_diff(image, train_image, test_image):
 def display_one_dim_image(img):
     plt.imshow(img)
     plt.show()
+
+
+def displayClassTable(number_of_list, title="                 Nombre d'échantillons"):
+    import pandas as pd
+    print("\n+------------ Tableau d'échantillons ---------------+")
+    lenth = len(number_of_list)
+    column1 = range(1, lenth + 1)
+    table = {'Class#': column1, title: number_of_list}
+    table_df = pd.DataFrame(table).to_string(index=False)
+    print(table_df)
+    print("+------------ Tableau d'échantillons ---------------+")
